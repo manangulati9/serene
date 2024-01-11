@@ -6,14 +6,14 @@ import { ChevronDown } from "lucide-react";
 
 export default function Component() {
 	return (
-		<header className="flex items-center px-4 md:bg-transparent bg-primary w-full h-20 md:px-6 text-primary-foreground shrink-0">
-			<p className="md:hidden block text-4xl font-extrabold font-judson">
+		<header className="flex items-center px-4 w-full h-20 md:px-6 md:bg-transparent bg-primary text-primary-foreground shrink-0">
+			<p className="block text-4xl font-extrabold md:hidden font-judson">
 				SERENE
 			</p>
 			<Sheet>
 				<SheetTrigger asChild>
 					<Button
-						className="ml-auto md:hidden bg-transparent"
+						className="ml-auto bg-transparent md:hidden"
 						size="icon"
 						variant="outline"
 					>
@@ -60,7 +60,7 @@ export default function Component() {
 					</div>
 				</SheetContent>
 			</Sheet>
-			<div className="hidden justify-evenly items-center p-3 w-full bg-primary rounded-xl md:flex">
+			<div className="hidden justify-between items-center py-3 px-8 w-full rounded-xl md:flex bg-primary">
 				<Link className="hidden mr-6 md:flex" href="/">
 					<p className="text-4xl font-extrabold font-judson">SERENE</p>
 					<span className="sr-only">Acme Inc</span>
