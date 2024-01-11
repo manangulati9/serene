@@ -1,12 +1,42 @@
+"use client";
+
 import { Button, buttonVariants } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
 import Link from "next/link";
 import { Icons } from "./ui/Icons";
 import { ChevronDown } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { cn } from "@/lib/utils";
 
-export default function Component() {
+export default function Navbar() {
+	const [isScrollingUp, setIsScrollingUp] = useState(true);
+	const prevScrollY = useRef(0);
+
+	const handleScroll = () => {
+		if (window.scrollY < (prevScrollY.current || 0)) {
+			setIsScrollingUp(true);
+		} else {
+			setIsScrollingUp(false);
+		}
+		prevScrollY.current = window.scrollY;
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
-		<header className="flex items-center px-4 w-full h-20 md:px-6 md:bg-transparent bg-primary text-primary-foreground shrink-0">
+		<header
+			className={cn(
+				"transition -translate-y-full backdrop-blur-md z-10 flex items-center px-4 w-full h-[4.5rem] md:px-6 md:bg-transparent bg-primary text-primary-foreground shrink-0 fixed",
+				{
+					"translate-y-0": isScrollingUp,
+				},
+			)}
+		>
 			<p className="block text-4xl font-extrabold md:hidden font-judson">
 				SERENE
 			</p>
@@ -60,7 +90,7 @@ export default function Component() {
 					</div>
 				</SheetContent>
 			</Sheet>
-			<div className="hidden justify-between items-center py-3 px-8 w-full rounded-xl md:flex bg-primary">
+			<div className="self-end hidden justify-between items-center py-3 px-8 w-full rounded-xl md:flex bg-primary">
 				<Link className="hidden mr-6 md:flex" href="/">
 					<p className="text-4xl font-extrabold font-judson">SERENE</p>
 					<span className="sr-only">Acme Inc</span>
