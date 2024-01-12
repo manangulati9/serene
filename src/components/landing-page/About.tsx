@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { AspectRatio } from "../ui/aspect-ratio";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function About() {
 	return (
-		<section className="container py-20 px-10 gap-8 flex md:flex-row flex-col justify-around">
-			<div className="md:w-[450px] w-[300px] self-center md:self-start">
+		<section className="container flex flex-col gap-8 justify-around py-20 px-10 md:flex-row">
+			<div className="self-center md:self-start w-[300px] md:w-[450px]">
 				<AspectRatio ratio={3 / 4}>
 					<Image
 						src="/assets/about-section.jpg"
@@ -17,9 +17,9 @@ export default function About() {
 					/>
 				</AspectRatio>
 			</div>
-			<div className="space-y-8 flex-1 max-w-xl">
-				<h2 className="text-primary text-5xl font-judson font-bold">
-					WHAT WE DO
+			<div className="flex-1 space-y-8 max-w-xl">
+				<h2 className="text-5xl md:text-6xl font-bold tracking-tight text-primary font-judson">
+					What we do
 				</h2>
 				<p>
 					Our platform is a user-friendly platform designed for proactive mental
@@ -52,7 +52,7 @@ export default function About() {
 					})}
 				>
 					<span>Learn more</span>
-					<ChevronRight className="h-4 w-4" />
+					<ChevronRight className="w-4 h-4" />
 				</Link>
 			</div>
 		</section>

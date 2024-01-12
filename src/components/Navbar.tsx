@@ -141,7 +141,7 @@ export default function Navbar() {
 				</nav>
 				<div className="hidden gap-2 items-center md:flex">
 					<Link
-						className={buttonVariants({ variant: "ghost" })}
+						className={buttonVariants({ variant: "secondary" })}
 						href="/sign-in"
 					>
 						Login

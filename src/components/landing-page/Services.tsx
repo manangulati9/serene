@@ -41,8 +41,8 @@ const SERVICES = [
 export default function Services() {
 	return (
 		<section className="pt-8 container space-y-4">
-			<h2 className="font-judson text-5xl text-primary font-bold text-center">
-				OUR SERVICES
+			<h2 className="font-judson tracking-tight text-5xl text-primary font-bold text-center">
+				Our services
 			</h2>
 			<div className="flex flex-col flex-wrap gap-2 md:flex-row w-full max-w-8xl items-center ">
 				{SERVICES.map((service) => {
