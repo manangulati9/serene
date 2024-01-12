@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 export default function Navbar() {
 	const [isScrollingUp, setIsScrollingUp] = useState(true);
 	const prevScrollY = useRef(0);
+	const isLoggedIn = true; //MOCKED
 
 	const handleScroll = () => {
 		if (window.scrollY < (prevScrollY.current || 0)) {
@@ -51,9 +52,11 @@ export default function Navbar() {
 						<span className="sr-only">Toggle navigation menu</span>
 					</Button>
 				</SheetTrigger>
-				<SheetContent side="left">
+				<SheetContent side="right">
 					<Link href="/">
-						<span>SERENE</span>
+						<h2 className="text-5xl font-extrabold font-judson text-primary">
+							SERENE
+						</h2>
 						<span className="sr-only">Serene</span>
 					</Link>
 					<div className="grid gap-2 py-6">
@@ -90,7 +93,7 @@ export default function Navbar() {
 					</div>
 				</SheetContent>
 			</Sheet>
-			<div className="self-end hidden justify-between items-center py-3 px-8 w-full rounded-xl md:flex bg-primary">
+			<div className="hidden justify-between items-center self-end py-3 px-8 w-full rounded-xl md:flex bg-primary">
 				<Link className="hidden mr-6 md:flex" href="/">
 					<p className="text-4xl font-extrabold font-judson">SERENE</p>
 					<span className="sr-only">Acme Inc</span>
@@ -140,18 +143,21 @@ export default function Navbar() {
 					</div>
 				</nav>
 				<div className="hidden gap-2 items-center md:flex">
-					<Link
-						className={buttonVariants({ variant: "secondary" })}
-						href="/sign-in"
-					>
-						Login
-					</Link>
-					<Link
-						className={buttonVariants({ variant: "secondary" })}
-						href="/dashboard"
-					>
-						Dashboard
-					</Link>
+					{isLoggedIn ? (
+						<Link
+							className={buttonVariants({ variant: "secondary" })}
+							href="/dashboard"
+						>
+							Dashboard
+						</Link>
+					) : (
+						<Link
+							className={buttonVariants({ variant: "secondary" })}
+							href="/sign-in"
+						>
+							Login
+						</Link>
+					)}
 				</div>
 			</div>
 		</header>
