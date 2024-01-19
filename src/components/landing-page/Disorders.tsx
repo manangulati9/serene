@@ -9,7 +9,7 @@ const DISORDERS = [
 		title: "Personality Disorders",
 		description: "Personality disorders are a group of mental illnesses.",
 		img: "/assets/personality_disorders.jpg",
-		link: "#",
+		link: "/PersonalityDisorders",
 	},
 	{
 		title: "Depression",
