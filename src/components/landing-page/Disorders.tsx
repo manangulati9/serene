@@ -9,25 +9,25 @@ const DISORDERS = [
 		title: "Personality Disorders",
 		description: "Personality disorders are a group of mental illnesses.",
 		img: "/assets/personality_disorders.jpg",
-		link: "/PersonalityDisorders",
+		link: "/Disorders/PersonalityDisorders",
 	},
 	{
 		title: "Depression",
 		description: "Depression is a common and serious mental illness.",
 		img: "/assets/depression.png",
-		link: "#",
+		link: "/Disorders/Depression",
 	},
 	{
 		title: "Anxiety",
 		description: "Anxiety is a feeling of fear, dread, and uneasiness.",
 		img: "/assets/anxiety.jpg",
-		link: "#",
+		link: "/Disorders/Anxiety",
 	},
 	{
 		title: "Mood swings",
 		description: "Mood swings causes sudden behavioral change and irritation.",
 		img: "/assets/mood_swings.png",
-		link: "#",
+		link: "/Disorders/MoodSwings",
 	},
 ];
 
