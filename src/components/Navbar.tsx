@@ -32,9 +32,10 @@ export default function Navbar() {
 	return (
 		<header
 			className={cn(
-				"transition -translate-y-full backdrop-blur-md z-10 flex items-center px-4 w-full h-[4.5rem] md:px-6 md:bg-transparent bg-primary text-primary-foreground shrink-0 fixed",
+				"transition -translate-y-full backdrop-blur-md z-10 flex  items-center px-4 w-full h-[4.5rem] md:px-6 md:bg-transparent bg-primary text-primary-foreground shrink-0 fixed top-0",
 				{
 					"translate-y-0": isScrollingUp,
+					
 				},
 			)}
 		>
@@ -93,7 +94,7 @@ export default function Navbar() {
 					</div>
 				</SheetContent>
 			</Sheet>
-			<div className="hidden justify-between items-center self-end py-3 px-8 w-full rounded-xl md:flex bg-primary">
+			<div className="hidden justify-between items-center self-end py-3 px-8 w-full rounded-xl md:flex bg-primary ">
 				<Link className="hidden mr-6 md:flex" href="/">
 					<p className="text-4xl font-extrabold font-judson">SERENE</p>
 					<span className="sr-only">Acme Inc</span>
